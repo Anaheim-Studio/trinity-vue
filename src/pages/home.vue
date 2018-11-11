@@ -2,6 +2,7 @@
   div.home-container home
     div.img-container
       img(class="img" src="../assets/img/bonsai.png")
+    el-button 按钮
 </template>
 
 <script>
