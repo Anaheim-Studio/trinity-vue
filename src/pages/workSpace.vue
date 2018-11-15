@@ -6,8 +6,29 @@
 </template>
 
 <script>
+import Api from './../common/api/api'
+
 export default {
-  
+  data () {
+    return {
+      renderMode: '', // 渲染模式
+    }
+  },
+  created () {
+    this._connectWS('ws://127.0.0.1:8679/')
+  },
+  methods: {
+    _connectWS (url) {
+
+      // 
+      let data = {
+        renderMode: this.renderMode,
+      }
+
+      // ws通信
+      Api.connectWS(url)
+    }
+  }
 }
 </script>
 
