@@ -2,11 +2,13 @@
   div.work-container
     div.left-side-container
     div.middle-container
+      div.canvas-container
+        canvas#myCanvas
     div.right-container
 </template>
 
 <script>
-import Api from './../common/api/api'
+import TRI_Frontend from './../common/api/api'
 
 export default {
   data () {
@@ -15,7 +17,11 @@ export default {
     }
   },
   created () {
-    this._connectWS('ws://127.0.0.1:8679/')
+    // this._connectWS('ws://127.0.0.1:8679/')
+    
+  },
+  mounted () {
+    TRI_Frontend.init() // 在 mounted 时，初始化
   },
   methods: {
     _connectWS (url) {
@@ -26,7 +32,7 @@ export default {
       }
 
       // ws通信
-      Api.connectWS(url)
+      TRI_Frontend.connectWS(url)
     }
   }
 }
@@ -43,7 +49,12 @@ export default {
 .middle-container
   width 60%
   background-color blue
- .right-container
+  .canvas-container
+    width 100%
+    height 100%
+    position relative
+    // .#myCanvas
+.right-container
   width 20%
   background-color yellow
 </style>
