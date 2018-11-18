@@ -4,6 +4,8 @@
     div.middle-container
       div.canvas-container
         canvas#myCanvas
+        canvas#myCanvasmini
+        canvas#myCanvascopy
     div.right-container
 </template>
 
