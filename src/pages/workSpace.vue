@@ -5,7 +5,8 @@
       div.canvas-container
         canvas#myCanvas
         canvas#myCanvasmini
-        canvas#myCanvascopy
+        canvas#cutxCanvas
+        canvas#cutyCanvas
     div.right-container
 </template>
 

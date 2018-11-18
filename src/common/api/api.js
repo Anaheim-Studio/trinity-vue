@@ -103,7 +103,7 @@ TRI_Frontend.NodeConnector = (function() {
   }
 })()
 
-VisControlConnector = (function () {
+TRI_Frontend.VisControlConnector = (function () {
   "use strict"
   var websocketControl = undefined
   var port = undefined
@@ -150,7 +150,27 @@ VisControlConnector = (function () {
   var setBoundingBoxNeeded = true
   var setRescaleSceneNeeded = true
   var scalevalue = 0.0
-  var clearViewPositionNeeded = true  
+  var clearViewPositionNeeded = true
+  var cutxCanvas = document.getElementById(cutxCanvas)
+  var cutyCanvas = document.getElementById(cutyCanvas)
+
+  return {
+    controlConnectionUri: '',
+    onMove: function (e) {
+      if (isRotating) {
+        //calculate deltas. mouse movement to the right and up is positive
+        if (e.type === 'touchmove') {
+          deltaX = e.originalEvent.touches[0].pageX - lastX
+          deltaY = lastY - e.originalEvent.touches[0].pageY
+
+          lastX = e.originalEvent.touches[0].pageX
+          lastY = e.originalEvent.touches[0].pageY
+          
+          
+        }
+      }
+    }
+  }
 })()
 
 
