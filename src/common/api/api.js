@@ -97,8 +97,60 @@ TRI_Frontend.NodeConnector = (function() {
   var websocket = undefined
 
   return {
-    
+    wsUri: "",
+
+
   }
+})()
+
+VisControlConnector = (function () {
+  "use strict"
+  var websocketControl = undefined
+  var port = undefined
+  var righttime = undefined
+  var lefttime = undefined
+  var setSetUserViewMatrixNeeded = true
+  var lastX = undefined
+  var lastY = undefined
+  var isRotating = false
+  var deltaX = 0.0
+  var deltaY = 0.0
+  var stoppedSending = false
+  var rotMode = true
+  var zoomCounter = 0
+  var zoomOutNeeded = true
+  var currentTF = 0
+  var tfCount = 0
+  var resetCameraNeeded = true
+  var resetSceneNeeded = true
+  var changeBgNeeded = true
+  var getBgcolorNeeded = true
+  var isovalue = 0.0
+  var enableClipping = true
+  var slideminx = 0.0
+  var slidemaxx = 400
+  var slideminy = 0.0
+  var slidemaxy = 400
+  var slideminz = 0.0
+  var slidemaxz = 400
+  var clippz = 0.0
+  var light_ambient = {"w":25,"x":25,"y":25,"z":255}
+  var light_diffuse = {"w":255,"x":255,"y":255,"z":255}
+  var light_specular = {"w":255,"x":255,"y":255,"z":255}
+  var lightx = 0.0
+  var lighty = 0.0
+  var lightz =-1.0
+  var bgColorSet1 = {"x":0,"y":0,"z":0}
+  var bgColorSet2 = {"x":0,"y":0,"z":0}
+  var value_tran_num = 1 / 2560 
+  var color_tran_num = 1 / 256
+  var enableLightning = true
+  var checkState = false
+  var setIsovalueNeeded = true
+  var setBoundingBoxNeeded = true
+  var setRescaleSceneNeeded = true
+  var scalevalue = 0.0
+  var clearViewPositionNeeded = true  
 })()
 
 
